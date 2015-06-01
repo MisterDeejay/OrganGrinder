@@ -7,8 +7,10 @@ var Key = React.createClass({
     // console.log(KeyStore.all());
     // console.log($.inArray(this.props.noteName, KeyStore.all()));
     if ($.inArray(this.props.noteName, KeyStore.all()) > -1){
+      $("#" + this.props.noteName).addClass("active");
       this.note.start();
     } else {
+      $("#" + this.props.noteName).removeClass("active");
       this.note.stop();
     }
   },
@@ -23,7 +25,7 @@ var Key = React.createClass({
 
     return (
       <li>
-        <div className={className}></div>
+        <div className={className} id={this.props.noteName}></div>
       </li>
     )
   },
