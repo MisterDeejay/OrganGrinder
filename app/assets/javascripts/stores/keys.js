@@ -33,5 +33,5 @@
       }
     })
   });
-    KeyStore.setMaxListeners(20);
+    KeyStore.setMaxListeners(50);
 })(this);
