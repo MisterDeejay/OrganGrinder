@@ -67,6 +67,7 @@ ul.organ li {
   position:relative;
 }
 
+/* Tuts*/
 ul.organ li div.note {
   display:block;
   height:220px;
@@ -94,6 +95,31 @@ ul.organ li div.note.active {
   height:216px;
 }
 
+ul.organ li div.note.active:before {
+  content:"";
+  width:0px;
+  height:0px;
+  border-width:216px 5px 0px;
+  border-style:solid;
+  border-color:transparent transparent transparent rgba(0,0,0,0.1);
+  position:absolute;
+  left:0px;
+  top:0px;
+}
+
+ul.organ li div.note.active:after {
+  content:"";
+  width:0px;
+  height:0px;
+  border-width:216px 5px 0px;
+  border-style:solid;
+  border-color:transparent rgba(0,0,0,0.1) transparent transparent;
+  position:absolute;
+  right:0px;
+  top:0px;
+}
+
+/*Black Tuts*/
 ul.organ li div.sharp {
   position:absolute;
   top:0px;
