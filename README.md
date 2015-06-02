@@ -29,7 +29,7 @@ Clone this repository:
 
 Install gems:
 
-    cd organgrinder/
+    cd OrganGrinder/
     bundle
 
 Install node modules:
