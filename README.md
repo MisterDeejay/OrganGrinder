@@ -25,7 +25,7 @@ On the key up event, this process is almost identical;
 
 Clone this repository:
 
-    git clone https://github.com/misterdeejay/organgrinder
+    git clone https://github.com/misterdeejay/OrganGrinder
 
 Install gems:
 
