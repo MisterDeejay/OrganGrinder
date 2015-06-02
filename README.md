@@ -6,6 +6,22 @@ and the [Flux](https://facebook.github.io/flux/) application architecture.
 
 ![screenshot](/screenshot.png)
 
+### Motivation
+
+This project was developed to demonstrate Flux's unidirectional flow. "Flux eschews MVC in favor of a unidirectional data flow." Instead of having data constantly flowing back and forth between models and views via the controller, "When a user interacts with a React view, the view propagates an action through a central dispatcher, to the various stores that hold the application's data and business logic, which updates all of the views that are affected."
+
+In other words, when the user presses a key on the keyboard, thereby interacting
+ with the React view, the view creates an action for the key that corresponds to
+ a note. The central dispatcher, a singleton model, propagates the action to the
+ KeyStore which holds the keys that are currently being played. The KeyStore thus
+ emits a CHANGE_EVENT, triggering a callback on the Key components allowing the
+ key to emit it's proper note.
+
+On the key up event, this process is almost identical;
+ however, the Dispatcher propagates a different action, removing that the corresponding
+ key from the KeyStore and eventually triggering a callback that stops the Key
+ component from emitting a sound.
+
 ### Installation
 
 Clone this repository:
