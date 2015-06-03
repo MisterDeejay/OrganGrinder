@@ -22,12 +22,34 @@ Track.prototype = {
   play: function() {
     var that = this;
     this._roll.forEach(function(el) {
-      setTimeout(that.playNotes(el.notes), el.time);
+      var play = function() {
+        that.playNotes(el);
+      };
+      setTimeout(play, el.time);
     });
   },
-  playNotes: function(notes) {
-    $(document).keyup();
-    notes.forEach(this.triggerKeyDown);
+  playNotes: function(rollEl) {
+    var notesBeingPlayed = KeyStore.all();
+    notesBeingPlayed.forEach(this.triggerKeyUp);
+    rollEl.notes.forEach(this.triggerKeyDown);
+  },
+  stopPlayingNote: function(note) {
+    if(!newNotes.includes(note)){
+      triggerKeyUp(note);
+    }
+  },
+  triggerKeyUp: function(note) {
+    keyCodesObj = KeyListener.keyCodes
+    for (var key in keyCodesObj) {
+      if (keyCodesObj.hasOwnProperty(key)) {
+        if (keyCodesObj[key] === note) {
+          var keyCode = key;
+        }
+      }
+    }
+    var event = $.Event('keyup');
+    event.keyCode = keyCode;
+    $(document).trigger(event);
   },
   triggerKeyDown: function(note) {
     keyCodesObj = KeyListener.keyCodes
