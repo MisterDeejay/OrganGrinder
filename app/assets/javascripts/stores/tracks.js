@@ -18,6 +18,6 @@
           KeyStore.emit(CHANGE_EVENT);
           break;
       }
-    });
-  })
+    })
+  });
 })(this);
