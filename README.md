@@ -36,7 +36,7 @@ Install node modules:
 
     npm install
 
-_Optional_: Download and install the [postgress app](http://postgresapp.com/).
+_Optional_: Download and install the [postgres app](http://postgresapp.com/).
 
     rake db:setup
 
