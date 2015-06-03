@@ -27,13 +27,12 @@ KeyListener = {
     77: "b5"
   },
   createKeyDownAction: function(e){
-    // e.preventDefault();
-    console.log(e.keyCode);
+    e.preventDefault();
     var noteName = KeyListener.keyCodes[e.keyCode];
     KeyActions.addKey(noteName);
   },
   createKeyUpAction: function(e){
-    // e.preventDefault();
+    e.preventDefault();
     var noteName = KeyListener.keyCodes[e.keyCode];
     KeyActions.removeKey(noteName);
   }
