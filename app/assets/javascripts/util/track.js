@@ -30,39 +30,42 @@ Track.prototype = {
   },
   playNotes: function(rollEl) {
     var notesBeingPlayed = KeyStore.all();
-    notesBeingPlayed.forEach(this.triggerKeyUp);
-    rollEl.notes.forEach(this.triggerKeyDown);
+    notesBeingPlayed.forEach(this.triggerKeyUpAction);
+    rollEl.notes.forEach(this.triggerKeyDownAction);
   },
   stopPlayingNote: function(note) {
     if(!newNotes.includes(note)){
       triggerKeyUp(note);
     }
   },
-  triggerKeyUp: function(note) {
-    keyCodesObj = KeyListener.keyCodes
-    for (var key in keyCodesObj) {
-      if (keyCodesObj.hasOwnProperty(key)) {
-        if (keyCodesObj[key] === note) {
-          var keyCode = key;
-        }
-      }
-    }
-    var event = $.Event('keyup');
-    event.keyCode = keyCode;
-    $(document).trigger(event);
+  triggerKeyUpAction: function(note) {
+    // keyCodesObj = KeyListener.keyCodes
+    // for (var key in keyCodesObj) {
+    //   if (keyCodesObj.hasOwnProperty(key)) {
+    //     if (keyCodesObj[key] === note) {
+    //       var keyCode = key;
+    //     }
+    //   }
+    // }
+    KeyActions.removeKey(note);
+    // var event = $.Event('keyup');
+    // event.keyCode = keyCode;
+    // $(document).trigger(event);
   },
-  triggerKeyDown: function(note) {
-    keyCodesObj = KeyListener.keyCodes
-    for (var key in keyCodesObj) {
-      if (keyCodesObj.hasOwnProperty(key)) {
-        if (keyCodesObj[key] === note) {
-          var keyCode = key;
-        }
-      }
-    }
-    var event = $.Event('keydown');
-    event.keyCode = keyCode;
-    $(document).trigger(event);
+  triggerKeyDownAction: function(note) {
+    // debugger
+    // keyCodesObj = KeyListener.keyCodes
+    // for (var key in keyCodesObj) {
+    //   if (keyCodesObj.hasOwnProperty(key)) {
+    //     if (keyCodesObj[key] === note) {
+    //       var keyCode = key;
+    //     }
+    //   }
+    // }
+    KeyActions.addKey(note);
+    // var event = $.Event('keydown');
+    // event.keyCode = keyCode;
+    // $(document).trigger(event);
   },
   addNotes: function(notes) {
     if (this._recording === true) {
