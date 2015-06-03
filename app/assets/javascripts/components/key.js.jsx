@@ -4,8 +4,6 @@ var Key = React.createClass({
     KeyStore.addChangeListener(this._onChange);
   },
   _onChange: function(){
-    // console.log(KeyStore.all());
-    // console.log($.inArray(this.props.noteName, KeyStore.all()));
     if ($.inArray(this.props.noteName, KeyStore.all()) > -1){
       $("#" + this.props.noteName).addClass("active");
       this.note.start();
