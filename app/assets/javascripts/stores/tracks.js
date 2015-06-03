@@ -8,6 +8,16 @@
     },
     addChangeListener: function() {
       this.on(CHANGE_EVENT, callback);
-    }
+    },
+    dispatcherID: AppDispatcher.register(function(payload) {
+      switch(payload.actionType) {
+        case TrackConstants.SAVE_TRACK:
+          KeyStore.emit(CHANGE_EVENT);
+          break;
+        case TrackConstants.DELETE_TRACK:
+          KeyStore.emit(CHANGE_EVENT);
+          break;
+      }
+    });
   })
 })(this);

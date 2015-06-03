@@ -39,33 +39,10 @@ Track.prototype = {
     }
   },
   triggerKeyUpAction: function(note) {
-    // keyCodesObj = KeyListener.keyCodes
-    // for (var key in keyCodesObj) {
-    //   if (keyCodesObj.hasOwnProperty(key)) {
-    //     if (keyCodesObj[key] === note) {
-    //       var keyCode = key;
-    //     }
-    //   }
-    // }
     KeyActions.removeKey(note);
-    // var event = $.Event('keyup');
-    // event.keyCode = keyCode;
-    // $(document).trigger(event);
   },
   triggerKeyDownAction: function(note) {
-    // debugger
-    // keyCodesObj = KeyListener.keyCodes
-    // for (var key in keyCodesObj) {
-    //   if (keyCodesObj.hasOwnProperty(key)) {
-    //     if (keyCodesObj[key] === note) {
-    //       var keyCode = key;
-    //     }
-    //   }
-    // }
     KeyActions.addKey(note);
-    // var event = $.Event('keydown');
-    // event.keyCode = keyCode;
-    // $(document).trigger(event);
   },
   addNotes: function(notes) {
     if (this._recording === true) {

@@ -1,0 +1,4 @@
+TrackConstants = {
+  SAVE_TRACK: "SAVE_TRACK",
+  DELETE_TRACK: "DELETE_TRACK"
+}
