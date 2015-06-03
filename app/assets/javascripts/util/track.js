@@ -6,6 +6,7 @@ window.Track = function(name, roll) {
 
 Track.prototype = {
   record: function() {
+    this._roll = [];
     this._recording = true;
     this._startTime = Date.now();
   },
@@ -15,9 +16,9 @@ Track.prototype = {
   save: function() {
     var name = prompt("Please enter your track name");
     if (name != null) {
-      this.name = name;
-      // next need to add a li to the track list which plays back this track
+      this._name = name;
     }
+    TrackActions.addTrack(this);
   },
   play: function() {
     var that = this;
