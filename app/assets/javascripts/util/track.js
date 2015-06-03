@@ -20,13 +20,27 @@ Track.prototype = {
     }
   },
   play: function() {
+    var that = this;
     this._roll.forEach(function(el) {
-      debugger;
-      setTimeout(playNotes(el.notes), el.time);
+      setTimeout(that.playNotes(el.notes), el.time);
     });
   },
-  playNotes: function(notes){
-    console.log("playing notes!");
+  playNotes: function(notes) {
+    $(document).keyup();
+    notes.forEach(this.triggerKeyDown);
+  },
+  triggerKeyDown: function(note) {
+    keyCodesObj = KeyListener.keyCodes
+    for (var key in keyCodesObj) {
+      if (keyCodesObj.hasOwnProperty(key)) {
+        if (keyCodesObj[key] === note) {
+          var keyCode = key;
+        }
+      }
+    }
+    var event = $.Event('keydown');
+    event.keyCode = keyCode;
+    $(document).trigger(event);
   },
   addNotes: function(notes) {
     if (this._recording === true) {
