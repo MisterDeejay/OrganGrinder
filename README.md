@@ -1,10 +1,14 @@
 Flux Piano using React
 ======================
 
+### Live
+
+[Live](https://piano-app.herokuapp.com)
+
 Flux Piano is a simple piano application using [ReactJS](https://facebook.github.io/react/)
 and the [Flux](https://facebook.github.io/flux/) application architecture.
 
-![screenshot](/screenshot.png)
+[screenshot](/screenshot.png)
 
 ### Motivation
 
@@ -36,7 +40,7 @@ Install node modules:
 
     npm install
 
-_Optional_: Download and install the [postgress app](http://postgresapp.com/).
+_Optional_: Download and install the [postgres app](http://postgresapp.com/).
 
     rake db:setup
 
